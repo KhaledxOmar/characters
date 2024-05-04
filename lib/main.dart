@@ -1,8 +1,10 @@
 import 'package:characters_app/screens/home/home.dart';
+import 'package:characters_app/theme.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MaterialApp(
+  runApp(MaterialApp(
+    theme: primaryTheme,
     home: Home()
   ));
 }
