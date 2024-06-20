@@ -50,7 +50,31 @@ ThemeData primaryTheme = ThemeData(
       fontWeight: FontWeight.bold,
       letterSpacing: 1,
     ),
-    
+
+  ),
+
+  //card theme
+  cardTheme: CardTheme(
+    color: AppColors.secondaryColor.withOpacity(0.4), //it has red color because of the seed color so I used surfaceTint
+    surfaceTintColor: Colors.transparent,
+    shape: const RoundedRectangleBorder(),
+    shadowColor: Colors.transparent, //to get no shadow around the cards
+    margin: const EdgeInsets.only(bottom: 16),
+  ),
+
+  // input decoration theme for the Textfield
+  inputDecorationTheme: InputDecorationTheme(
+    filled: true, // Means that their will be a background color 
+    fillColor: AppColors.secondaryColor.withOpacity(0.5),
+    border: InputBorder.none, //the bottom border the line below the textfield will be deleted
+    labelStyle: TextStyle(color: AppColors.textColor),
+    prefixIconColor: AppColors.textColor,
+  ),
+
+  // Dialog theme
+  dialogTheme: DialogTheme(
+    backgroundColor: AppColors.secondaryAccent,
+    surfaceTintColor: Colors.transparent,
   )
 
 

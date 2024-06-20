@@ -1,3 +1,6 @@
+import 'package:characters_app/models/character.dart';
+import 'package:characters_app/screens/create/create.dart';
+import 'package:characters_app/screens/home/character_card.dart';
 import 'package:characters_app/shared/styled_button.dart';
 import 'package:characters_app/shared/styled_text.dart';
 import 'package:flutter/material.dart';
@@ -11,7 +14,6 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
 
-  List chatacters = ['khaled', 'tameem', 'aljowharah', 'yasser', 'Ahlam', 'LULU'];
   
 
   @override
@@ -23,27 +25,26 @@ class _HomeState extends State<Home> {
         centerTitle: true,
       ),
 
-      body: Container(
+      body: Container( 
         padding: const EdgeInsets.all(16),
         child: Column(
           children: [
             //expanded to make it constrained to the screen. whatever space that is left it. 
             Expanded( 
               child: ListView.builder(
-                itemCount: chatacters.length,
+                itemCount: characters.length,
                 itemBuilder: (_,index){
-                  return Container(
-                    color: Colors.grey[800],
-                    padding: const EdgeInsets.all(40),
-                    margin: const EdgeInsets.only(bottom: 40),
-                    child: Text(chatacters[index]),
-                  );
+                  return CharacterCard(characters[index]);
                 },
               ),
             ),
-
+            
             StyledButton(
-                onPressed: (){}, 
+                onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(
+                    builder: (ctx) => const Create()
+                  ));
+                }, 
                 child: const StyledHeading("create new"),
                 ),
 
